@@ -3,6 +3,10 @@ package com.example.android.miwok;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -25,10 +29,19 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("nine");
         words.add("ten");
 
-        Log.v("NumbersActivity", "Words at 1: " + words.get(0));
-        Log.v("NumbersActivity", "Words at 2: " + words.get(1));
-        Log.v("NumbersActivity", "Words at 3: " + words.get(2));
-        Log.v("NumbersActivity", "Words at 4: " + words.get(3));
-        Log.v("NumbersActivity", "Words at 5: " + words.get(4));
+        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+
+        TextView wordView = new TextView(this);
+        wordView.setText(words.get(0));
+        rootView.addView(wordView);
+
+        TextView wordView1 = new TextView(this);
+        wordView1.setText(words.get(1));
+        rootView.addView(wordView1);
+
+        TextView wordView2 = new TextView(this);
+        wordView2.setText(words.get(2));
+        rootView.addView(wordView2);
+
     }
 }
